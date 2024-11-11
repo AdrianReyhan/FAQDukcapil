@@ -9,12 +9,14 @@
     <title>{{ config('app.name', 'FAQ') }}</title>
     <meta name="theme-color" content="#ffffff">
     @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 
 <body>
 
     <div class="min-vh-100 d-flex flex-row align-items-center"
-        style="background-image: url('{{ asset('assets/img/3.jpg') }}'); background-size: cover; background-position: center;">
+        style="background-image: url('{{ asset('assets/img/2.jpg') }}'); background-size: cover; background-position: center;">
         <div class="container">
             <div class="row justify-content-center">
                 @yield('content')
