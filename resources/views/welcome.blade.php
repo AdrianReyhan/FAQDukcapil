@@ -21,23 +21,17 @@
         <!-- Hero Section -->
         <section id="hero" class="hero section dark-background">
 
-            <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+            <img src="assets/img/yoi.jpg" alt="" data-aos="fade-in">
 
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10">
-                        <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
-                        <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites
-                            with Bootstrap</p>
+                        <h2 data-aos="fade-up" data-aos-delay="100">Cari Jawaban Anda di FAQ Kami</h2>
+                        <p data-aos="fade-up" data-aos-delay="200">Kami memahami bahwa Anda mungkin memiliki pertanyaan.
+                            Cari jawabannya dengan mudah di halaman FAQ ini!</p>
                     </div>
-                    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
-                        <form action="forms/newsletter.php" method="post" class="php-email-form">
-                            <div class="sign-up-form"><input type="email" name="email"><input type="submit"
-                                    value="Subscribe"></div>
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-                        </form>
+                    <div class="text-start">
+                        <a data-aos="fade-up" data-aos-delay="300" class="cta-btn" href="#">Call To Action</a>
                     </div>
                 </div>
             </div>
@@ -45,18 +39,18 @@
         </section><!-- /Hero Section -->
 
         <!-- Clients Section -->
-        <section id="clients" class="clients section">
+        {{-- <section id="clients" class="clients section">
 
             <div class="container" data-aos="fade-up">
 
                 <div class="row gy-4">
 
                     <div class="col-xl-2 col-md-3 col-6 client-logo">
-                        <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+                        <img src="assets/img/clients/smg.png" class="img-fluid" alt="">
                     </div><!-- End Client Item -->
 
                     <div class="col-xl-2 col-md-3 col-6 client-logo">
-                        <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+                        <img src="assets/img/clients/smg1.png" class="img-fluid" alt="">
                     </div><!-- End Client Item -->
 
                     <div class="col-xl-2 col-md-3 col-6 client-logo">
@@ -79,7 +73,8 @@
 
             </div>
 
-        </section><!-- /Clients Section -->
+        </section> --}}
+        <!-- /Clients Section -->
 
         <!-- About Section -->
         <section id="about" class="about section light-background">
@@ -154,33 +149,33 @@
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="158" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p>Clients</p>
+                            <p>Pertanyaan Terjawab</p>
                         </div>
                     </div><!-- End Stats Item -->
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="143" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p>Projects</p>
+                            <p>Pengguna Puas</p>
                         </div>
                     </div><!-- End Stats Item -->
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="1453"
-                                data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Hours Of Support</p>
+                            <span data-purecounter-start="0" data-purecounter-end="837" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Solusi Tersedia</p>
                         </div>
                     </div><!-- End Stats Item -->
 
                     <div class="col-lg-3 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1"
                                 class="purecounter"></span>
-                            <p>Workers</p>
+                            <p>Jam Dukungan</p>
                         </div>
                     </div><!-- End Stats Item -->
 
