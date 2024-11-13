@@ -13,7 +13,7 @@
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#stats">Services</a></li>
                 <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                <li><a class="nav-link scrollto" href="#recent-posts">Post</a></li>
+                <li><a class="nav-link scrollto" href="#faq">Categories</a></li>
                 <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
@@ -38,7 +38,7 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="{{ route('login') }}">Login</a>
+        <a class="btn-getstarted" href="{{ url('login') }}">Login</a>
 
     </div>
 </header>
