@@ -1,7 +1,7 @@
 <!-- Favicons -->
 <link href="assets/img/smg.png" rel="icon">
 <link href="assets/img/smg.png" rel="smg-touch-icon">
-<link rel="icon" href="img/smg.png'">
+<link rel="icon" href="assets/img/smg.png'">
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect">

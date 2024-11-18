@@ -10,8 +10,9 @@
     <meta name="theme-color" content="#ffffff">
     @vite('resources/sass/app.scss')
     <!-- Favicons -->
-    <link href="{{ asset('img/smg.png') }}" rel="icon">
-    <link href="{{ asset('img/smg.png') }}" rel="apple-touch-icon">
+    <link href="assets/img/smg.png" rel="icon">
+    <link href="assets/img/smg.png" rel="smg-touch-icon">
+    <link rel="icon" href="assets/img/smg.png'">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
                 <use xlink:href="{{ asset('icons/brand.svg#signet') }}"></use>
             </svg>
         </div>
-        @include('layouts.navigation')
+        @include('includes.admin.sidebar')
         <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
@@ -49,10 +50,14 @@
                 </ul>
                 <ul class="header-nav ms-3">
                     <li class="nav-item dropdown">
-                        <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link py-0 d-flex align-items-center" data-coreui-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="true" aria-expanded="false">
+                            <img class="avatar w-10 h-10 rounded-full me-2"
+                                src="https://ui-avatars.com/api/?background=random&name={{ urlencode(Auth::user()->name) }}"
+                                alt="{{ Auth::user()->name }}">
                             {{ Auth::user()->name }}
                         </a>
+
                         <div class="dropdown-menu dropdown-menu-end pt-0">
                             <a class="dropdown-item" href="{{ route('profile.show') }}">
                                 <svg class="icon me-2">
@@ -80,16 +85,21 @@
                 @yield('content')
             </div>
         </div>
-        <footer class="footer">
-            <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> &copy;
-                2021
-                creativeLabs.
+        <footer class="footer d-flex justify-content-center">
+            <div>
+                © <span class="current-year"></span> | By <a href="https://dispendukcapil.semarangkota.go.id/">
+                    Dinas Kependudukan Dan Pencatatan Sipil Kota Semarang</a>
+
+
             </div>
-            <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/bootstrap/ui-components/">CoreUI UI
-                    Components</a></div>
         </footer>
     </div>
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
+    <script>
+        const currentYear = new Date().getFullYear();
+
+        document.querySelector('.current-year').textContent = currentYear;
+    </script>
 </body>
 
 </html>
