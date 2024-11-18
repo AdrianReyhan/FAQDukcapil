@@ -10,9 +10,9 @@
     <meta name="theme-color" content="#ffffff">
     @vite('resources/sass/app.scss')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="assets/img/smg.png" rel="icon">
-    <link href="assets/img/smg.png" rel="smg-touch-icon">
-    <link rel="icon" href="assets/img/smg.png'">
+    <link href="{{ asset('assets/img/smg.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/smg.png') }}" rel="smg-touch-icon">
+    <link rel="icon" href="{{ asset('assets/img/smg.png') }}">
 </head>
 
 <body>
@@ -26,6 +26,7 @@
         </div>
     </div>
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
+   
 </body>
 
 </html>

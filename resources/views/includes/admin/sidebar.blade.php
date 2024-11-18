@@ -9,11 +9,11 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('users.index') }}">
+        <a class="nav-link" href="{{ route('categories.index') }}">
             <svg class="nav-icon">
-                <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
+                <use xlink:href="{{ asset('icons/coreui.svg#cil-newspaper') }}"></use>
             </svg>
-            {{ __('Users') }}
+            {{ __('Kategori') }}
         </a>
     </li>
 

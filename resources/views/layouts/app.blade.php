@@ -10,21 +10,22 @@
     <meta name="theme-color" content="#ffffff">
     @vite('resources/sass/app.scss')
     <!-- Favicons -->
-    <link href="assets/img/smg.png" rel="icon">
-    <link href="assets/img/smg.png" rel="smg-touch-icon">
-    <link rel="icon" href="assets/img/smg.png'">
+    <link href="{{ asset('assets/img/smg.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/smg.png') }}" rel="apple-touch-icon">
+    <link rel="icon" href="assets/img/smg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-        <div class="sidebar-brand d-none d-md-flex">
-            <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-                <use xlink:href="{{ asset('icons/brand.svg#full') }}"></use>
-            </svg>
-            <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-                <use xlink:href="{{ asset('icons/brand.svg#signet') }}"></use>
-            </svg>
+        <div class="sidebar-brand d-none d-md-flex" style="padding: 10px;">
+            <img src="{{ asset('assets/img/smg.png') }}" alt="CoreUI Logo"
+                style="width: 60px; height: auto; margin: 0 auto; display: block;">
         </div>
+
+
         @include('includes.admin.sidebar')
         <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
     </div>
@@ -99,6 +100,17 @@
         const currentYear = new Date().getFullYear();
 
         document.querySelector('.current-year').textContent = currentYear;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if (session('success'))
+            Swal.fire({
+                title: 'Success!',
+                text: '{{ session('success') }}',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        @endif
     </script>
 </body>
 
