@@ -18,11 +18,19 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('about') }}">
+        <a class="nav-link" href="{{ route('articles.index') }}">
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-description') }}"></use>
             </svg>
             {{ __('Artikel') }}
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('tags.index') }}">
+            <svg class="nav-icon">
+                <use xlink:href="{{ asset('icons/coreui.svg#cil-tag') }}"></use>
+            </svg>
+            {{ __('Tag') }}
         </a>
     </li>
 

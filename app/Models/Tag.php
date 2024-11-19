@@ -29,10 +29,11 @@ class Tag extends Model
 
     public function articles()
     {
-        return $this->belongsToMany(Article::class);
+        return $this->belongsToMany(Article::class, 'article_tag', 'tag_id', 'article_id');
     }
 
-    public function sluggable()
+
+    public function sluggable(): array
     {
         return [
             'slug' => [

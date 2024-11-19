@@ -101,7 +101,19 @@
 
         document.querySelector('.current-year').textContent = currentYear;
     </script>
+    <script src="https://cdn.tiny.cloud/1/5ibnn5gcdir3oe9787qyp3x9a792aw257jv39apisf3cpkok/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        tinymce.init({
+            selector: '#full_text', // Targetkan ID textarea
+            plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+            height: 300, // Tinggi editor
+            menubar: false // Sembunyikan menubar (opsional)
+        });
+    </script>
+
     <script>
         @if (session('success'))
             Swal.fire({

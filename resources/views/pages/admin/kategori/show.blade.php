@@ -9,8 +9,8 @@
             <table class="table table-bordered">
                 <tbody>
                     <tr>
-                        <th scope="row">ID</th>
-                        <td>{{ $category->id }}</td>
+                        <th scope="row">NO</th>
+                        <td>{{ $loop->iteration }}</td>
                     </tr>
                     <tr>
                         <th scope="row">Nama</th>

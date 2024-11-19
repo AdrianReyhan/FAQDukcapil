@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +19,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
     Route::resource('categories', CategoryController::class);
+    Route::resource('tags', TagController::class);
+    Route::resource('articles', ArticlesController::class);
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 });
