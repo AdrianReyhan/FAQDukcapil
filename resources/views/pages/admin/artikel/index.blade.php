@@ -35,7 +35,7 @@
                                 <td>{{ $article->slug }}</td>
                                 <td>
                                     @foreach ($article->tags as $tag)
-                                        <span class="badge bg-info text-dark">{{ $tag->name }}</span>
+                                        <span class="badge bg-success text-white">{{ $tag->name }}</span>
                                     @endforeach
                                 </td>
                                 <td>

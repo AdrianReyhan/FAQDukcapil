@@ -29,6 +29,12 @@ class TagController extends Controller
         return redirect()->route('tags.index')->with('success', 'Tag berhasil ditambahkan.');
     }
 
+    public function show($id)
+    {
+        $tag = Tag::find($id);
+        return view('pages.admin.tag.show', compact('tag'));
+    }
+
     public function edit(Tag $tag)
     {
         return view('pages.admin.tag.edit', compact('tag'));
