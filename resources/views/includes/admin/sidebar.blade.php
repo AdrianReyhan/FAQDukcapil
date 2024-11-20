@@ -39,15 +39,23 @@
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-star') }}"></use>
             </svg>
-            Two-level menu
+            FAQ Management
         </a>
         <ul class="nav-group-items" style="height: 0px;">
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('faq-categories.index') }}" target="_top">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-spreadsheet') }}"></use>
+                    </svg>
+                    FAQ Kategori
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#" target="_top">
                     <svg class="nav-icon">
-                        <use xlink:href="{{ asset('icons/coreui.svg#cil-bug') }}"></use>
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-note-add') }}"></use>
                     </svg>
-                    Child menu
+                    FAQ Question
                 </a>
             </li>
         </ul>

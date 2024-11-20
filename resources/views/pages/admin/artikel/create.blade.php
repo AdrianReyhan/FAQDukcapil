@@ -48,9 +48,7 @@
                     <label for="tags">Tags</label>
                     <select name="tags[]" id="tags" class="form-control" multiple>
                         @foreach ($tags as $tag)
-                            <option value="{{ $tag->id }}" {{ $article->tags->contains($tag->id) ? 'selected' : '' }}>
-                                {{ $tag->name }}
-                            </option>
+                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                         @endforeach
                     </select>
                     <small class="form-text text-muted">Gunakan Ctrl (Windows) atau Command (Mac) untuk memilih beberapa

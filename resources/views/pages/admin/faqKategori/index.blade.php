@@ -3,57 +3,42 @@
 @section('content')
     <div class="card mb-4">
         <div class="card-header text-center">
-            <h4>{{ __('Daftar Artikel') }}</h4>
+            <h4>{{ __('Daftar Kategori FAQ') }}</h4>
         </div>
 
-        <!-- Gunakan flex untuk menyusun tombol dan tabel -->
-        <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-                <!-- Tombol Tambah Artikel -->
-                <a href="{{ route('articles.create') }}" class="btn btn-primary">Tambah Artikel</a>
-            </div>
+        <div class="card-body">
+            <a href="{{ route('faq-categories.create') }}" class="btn btn-primary mb-3">Tambah Kategori</a>
 
-            <!-- Tabel Artikel -->
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+
             <div class="table-container">
                 <table class="table table-bordered table-hover text-center align-middle">
                     <thead class="table-dark">
                         <tr>
                             <th>No</th>
-                            <th>Judul</th>
-                            <th>Slug</th>
                             <th>Kategori</th>
-                            <th>Tag</th>
-                            <th>Short Text</th>
-                            <th>Views Count</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($articles as $article)
+                        @foreach ($faqCategories as $faqCategory)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $article->title }}</td>
-                                <td>{{ $article->slug }}</td>
-                                <td><span class="badge bg-success text-white">{{ $article->category->name }}</span></td>
-                                <td>
-                                    @foreach ($article->tags as $tag)
-                                        <span class="badge bg-success text-white">{{ $tag->name }}</span>
-                                    @endforeach
-                                </td>
-                                <td>{{ $article->short_text }}</td>
-                                <td>{{ $article->views_count }}</td>
+                                <td>{{ $faqCategory->category }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
-                                        <a href="{{ route('articles.edit', $article->id) }}"
+                                        <a href="{{ route('faq-categories.edit', $faqCategory->id) }}"
                                             class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="{{ route('articles.show', $article->id) }}"
+                                        <a href="{{ route('faq-categories.show', $faqCategory->id) }}"
                                             class="btn btn-info btn-sm">Lihat</a>
-                                        <form action="{{ route('articles.destroy', $article->id) }}" method="POST"
+                                        <form action="{{ route('faq-categories.destroy', $faqCategory->id) }}" method="POST"
                                             class="delete-form">
                                             @csrf
                                             @method('DELETE')
                                             <button type="button"
-                                                class="btn btn-danger btn-sm delete-button">Hapus</button>
+                                                class="btn btn-danger btn-sm delete-button">Delete</button>
                                         </form>
                                     </div>
                                 </td>
@@ -62,21 +47,9 @@
                     </tbody>
                 </table>
             </div>
+
         </div>
     </div>
-
-    <script>
-        // SweetAlert Notification
-        @if (session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: "{{ session('success') }}",
-                timer: 3000,
-                showConfirmButton: false
-            });
-        @endif
-    </script>
 
     <script>
         document.querySelectorAll('.delete-button').forEach(button => {

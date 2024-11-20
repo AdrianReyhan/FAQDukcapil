@@ -13,8 +13,9 @@ class ArticlesController extends Controller
 {
     public function index()
     {
+        $categories = Category::all();
         $articles = Article::all();
-        return view('pages.admin.artikel.index', compact('articles'));
+        return view('pages.admin.artikel.index', compact('articles', 'categories'));
     }
 
     public function create()
@@ -53,6 +54,7 @@ class ArticlesController extends Controller
     public function show($id)
     {
         $articles = Article::with(['category', 'tags'])->findOrFail($id);
+        $articles->increment('views_count');
         return view('pages.admin.artikel.show', compact('articles'));
     }
 

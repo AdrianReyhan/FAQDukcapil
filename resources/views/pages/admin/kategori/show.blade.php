@@ -10,7 +10,7 @@
                 <tbody>
                     <tr>
                         <th scope="row">NO</th>
-                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $category->id }}</td>
                     </tr>
                     <tr>
                         <th scope="row">Nama</th>
