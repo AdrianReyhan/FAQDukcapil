@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-
 class ArticlesController extends Controller
 {
     public function index()
     {
         $categories = Category::all();
-        $articles = Article::all();
+        $articles = Article::with(['category', 'tags'])->latest()->paginate(10); // 10 artikel per halaman
         return view('pages.admin.artikel.index', compact('articles', 'categories'));
     }
 

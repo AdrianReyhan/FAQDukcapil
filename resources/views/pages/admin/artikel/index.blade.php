@@ -67,6 +67,9 @@
                     </tbody>
                 </table>
             </div>
+            <div class="d-flex justify-content-end mt-3">
+                {{ $articles->links() }}
+            </div>
         </div>
     </div>
 

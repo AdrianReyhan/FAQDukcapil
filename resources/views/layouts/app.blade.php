@@ -101,18 +101,50 @@
 
         document.querySelector('.current-year').textContent = currentYear;
     </script>
-    <script src="https://cdn.tiny.cloud/1/5ibnn5gcdir3oe9787qyp3x9a792aw257jv39apisf3cpkok/tinymce/6/tinymce.min.js"
+    <script src="https://cdn.tiny.cloud/1/5ibnn5gcdir3oe9787qyp3x9a792aw257jv39apisf3cpkok/tinymce/7/tinymce.min.js"
         referrerpolicy="origin"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         tinymce.init({
-            selector: '#full_text', // Targetkan ID textarea
-            plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
-            height: 300, // Tinggi editor
-            menubar: false // Sembunyikan menubar (opsional)
+            selector: '#full_text',
+            plugins: [
+                'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media',
+                'searchreplace', 'table', 'visualblocks', 'wordcount',
+                'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker',
+                'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage',
+                'advtemplate', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags',
+                'autocorrect', 'typography', 'inlinecss', 'markdown',
+                'importword', 'exportword', 'exportpdf'
+            ],
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat | image',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            images_upload_url: '/upload', // Endpoint untuk proses upload
+            images_upload_credentials: true, // Mengirimkan cookie otentikasi jika diperlukan
+            file_picker_types: 'image',
+            automatic_uploads: true,
+            file_picker_callback: function(callback, value, meta) {
+                if (meta.filetype === 'image') {
+                    const input = document.createElement('input');
+                    input.setAttribute('type', 'file');
+                    input.setAttribute('accept', 'image/*');
+                    input.onchange = function() {
+                        const file = this.files[0];
+                        const reader = new FileReader();
+                        reader.onload = function() {
+                            callback(reader.result, {
+                                alt: file.name
+                            });
+                        };
+                        reader.readAsDataURL(file);
+                    };
+                    input.click();
+                }
+            },
         });
     </script>
+
 
     <script>
         @if (session('success'))

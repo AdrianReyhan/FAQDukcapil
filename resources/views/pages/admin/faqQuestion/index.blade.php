@@ -3,13 +3,11 @@
 @section('content')
     <div class="card mb-4">
         <div class="card-header text-center">
-            <h4>{{ __('Daftar Kategori') }}</h4>
+            <h4>{{ __('Daftar Pertanyaan FAQ') }}</h4>
         </div>
 
-        <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-                <a href="{{ route('categories.create') }}" class="btn btn-primary mb-2">Tambah Kategori</a>
-            </div>
+        <div class="card-body">
+            <a href="{{ route('faq-questions.create') }}" class="btn btn-primary mb-3">Tambah Pertanyaan</a>
 
             @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
@@ -19,25 +17,25 @@
                 <table class="table table-bordered table-hover text-center align-middle">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col">NO</th>
-                            <th scope="col">NAME</th>
-                            <th scope="col">SLUG</th>
-                            <th scope="col">AKSI</th>
+                            <th>No</th>
+                            <th>Pertanyaan</th>
+                            <th>Jawaban</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($faqQuestions as $faqQuestion)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $category->name }}</td>
-                                <td>{{ $category->slug }}</td>
+                                <td>{{ $faqQuestion->question }}</td>
+                                <td>{{ Str::limit($faqQuestion->answer, 50) }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
-                                        <a href="{{ route('categories.edit', $category->id) }}"
+                                        <a href="{{ route('faq-questions.edit', $faqQuestion->id) }}"
                                             class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="{{ route('categories.show', $category->id) }}"
+                                        <a href="{{ route('faq-questions.show', $faqQuestion->id) }}"
                                             class="btn btn-info btn-sm">Lihat</a>
-                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST"
+                                        <form action="{{ route('faq-questions.destroy', $faqQuestion->id) }}" method="POST"
                                             class="delete-form">
                                             @csrf
                                             @method('DELETE')
@@ -50,26 +48,10 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="d-flex justify-content-end mt-3">
-                    {{ $categories->links() }}
-                </div>
             </div>
+
         </div>
-
     </div>
-
-    <script>
-        // SweetAlert Notification
-        @if (session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: "{{ session('success') }}",
-                timer: 3000,
-                showConfirmButton: false
-            });
-        @endif
-    </script>
 
     <script>
         document.querySelectorAll('.delete-button').forEach(button => {
@@ -80,7 +62,7 @@
 
                 Swal.fire({
                     title: 'Apakah Anda yakin?',
-                    text: "Data ini akan dihapus secara permanen dan tidak dapat dikembalikan!",
+                    text: "Pertanyaan ini akan dihapus secara permanen dan tidak dapat dikembalikan!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',

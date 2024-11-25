@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" target="_top">
+                <a class="nav-link" href="{{ route('faq-questions.index') }}" target="_top">
                     <svg class="nav-icon">
                         <use xlink:href="{{ asset('icons/coreui.svg#cil-note-add') }}"></use>
                     </svg>

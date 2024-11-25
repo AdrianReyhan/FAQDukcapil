@@ -29,9 +29,9 @@
 
                 <!-- Short Text -->
                 <div class="form-group mb-3">
-                    <label for="short_text">Deskripsi Singkat</label>
-                    <textarea id="short_text" name="short_text" class="form-control" rows="3"
-                        placeholder="Masukkan deskripsi singkat artikel" required></textarea>
+                    <label for="short_text">Short Text</label>
+                    <textarea id="short_text" name="short_text" class="form-control" rows="5" style="resize: vertical; width: 100%;"
+                        placeholder="Masukkan deskripsi singkat artikel">{{ old('short_text') }}</textarea>
                 </div>
 
                 <!-- Full Text -->
@@ -40,7 +40,6 @@
                     <textarea id="full_text" name="full_text" class="form-control" rows="10"
                         placeholder="Masukkan konten lengkap artikel"></textarea>
                 </div>
-
 
 
                 <!-- Tags -->
