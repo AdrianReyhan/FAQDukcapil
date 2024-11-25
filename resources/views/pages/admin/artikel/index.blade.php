@@ -24,6 +24,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>No</th>
+                            <th>Gambar</th>
                             <th>Judul</th>
                             <th>Slug</th>
                             <th>Kategori</th>
@@ -37,6 +38,14 @@
                         @foreach ($articles as $article)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+                                <td>
+                                    @if ($article->image)
+                                        <img src="{{ asset('storage/' . $article->image) }}" alt="Gambar Artikel"
+                                            class="img-thumbnail" width="100">
+                                    @else
+                                        <span>Tidak ada gambar</span>
+                                    @endif
+                                </td>
                                 <td>{{ $article->title }}</td>
                                 <td>{{ $article->slug }}</td>
                                 <td><span class="badge bg-success text-white">{{ $article->category->name }}</span></td>

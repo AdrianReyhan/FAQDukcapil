@@ -26,6 +26,7 @@ class Article extends Model
         'short_text',
         'views_count',
         'category_id',
+        'image',
         'created_at',
         'updated_at',
         'deleted_at',

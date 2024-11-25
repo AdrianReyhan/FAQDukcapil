@@ -33,8 +33,8 @@
                                             class="btn btn-warning btn-sm">Edit</a>
                                         <a href="{{ route('faq-categories.show', $faqCategory->id) }}"
                                             class="btn btn-info btn-sm">Lihat</a>
-                                        <form action="{{ route('faq-categories.destroy', $faqCategory->id) }}" method="POST"
-                                            class="delete-form">
+                                        <form action="{{ route('faq-categories.destroy', $faqCategory->id) }}"
+                                            method="POST" class="delete-form">
                                             @csrf
                                             @method('DELETE')
                                             <button type="button"
@@ -47,7 +47,9 @@
                     </tbody>
                 </table>
             </div>
-
+            <div class="d-flex justify-content-end mt-3">
+                {{ $faqCategories->links() }}
+            </div>
         </div>
     </div>
 

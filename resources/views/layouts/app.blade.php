@@ -109,7 +109,7 @@
         tinymce.init({
             selector: '#full_text',
             plugins: [
-                'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media',
+                'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists',
                 'searchreplace', 'table', 'visualblocks', 'wordcount',
                 'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker',
                 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage',

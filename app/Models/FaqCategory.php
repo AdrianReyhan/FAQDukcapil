@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\FaqQuestion;
+use App\Models\FaqQuestion;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

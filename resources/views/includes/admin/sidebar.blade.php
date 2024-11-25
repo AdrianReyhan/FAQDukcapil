@@ -18,14 +18,6 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('articles.index') }}">
-            <svg class="nav-icon">
-                <use xlink:href="{{ asset('icons/coreui.svg#cil-description') }}"></use>
-            </svg>
-            {{ __('Artikel') }}
-        </a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link" href="{{ route('tags.index') }}">
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-tag') }}"></use>
@@ -34,8 +26,17 @@
         </a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('articles.index') }}">
+            <svg class="nav-icon">
+                <use xlink:href="{{ asset('icons/coreui.svg#cil-description') }}"></use>
+            </svg>
+            {{ __('Artikel') }}
+        </a>
+    </li>
+
     <li class="nav-group" aria-expanded="false">
-        <a class="nav-link nav-group-toggle" href="#">
+        <a class="nav-link nav-group-toggle" >
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-star') }}"></use>
             </svg>

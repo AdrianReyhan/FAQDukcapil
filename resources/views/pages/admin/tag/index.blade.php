@@ -52,6 +52,9 @@
                     </tbody>
                 </table>
             </div>
+             <div class="d-flex justify-content-end mt-3">
+                {{ $tags->links() }}
+            </div>
         </div>
     </div>
 

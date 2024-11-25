@@ -6,13 +6,14 @@
             <h3>Edit Artikel</h3>
         </div>
         <div class="card-body">
-            <form action="{{ route('articles.update', $article->id) }}" method="POST">
+            <form action="{{ route('articles.update', $article->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
                 <div class="form-group mb-3">
                     <label for="title">Judul</label>
-                    <input type="text" name="title" id="title" class="form-control" value="{{ old('title', $article->title) }}" required>
+                    <input type="text" name="title" id="title" class="form-control"
+                        value="{{ old('title', $article->title) }}" required>
                 </div>
 
                 <div class="form-group mb-3">
@@ -20,7 +21,8 @@
                     <select name="category_id" id="category_id" class="form-control" required>
                         <option value="">-- Pilih Kategori --</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" {{ $article->category_id == $category->id ? 'selected' : '' }}>
+                            <option value="{{ $category->id }}"
+                                {{ $article->category_id == $category->id ? 'selected' : '' }}>
                                 {{ $category->name }}
                             </option>
                         @endforeach
@@ -29,7 +31,22 @@
 
                 <div class="form-group mb-3">
                     <label for="slug">Slug</label>
-                    <input type="text" name="slug" id="slug" class="form-control" value="{{ old('slug', $article->slug) }}" required>
+                    <input type="text" name="slug" id="slug" class="form-control"
+                        value="{{ old('slug', $article->slug) }}" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="image">Upload Gambar</label>
+                    <input type="file" name="image" id="image" class="form-control">
+
+                    <!-- Pratinjau gambar yang sudah ada -->
+                    @if ($article->image)
+                        <div class="mt-3">
+                            <p>Gambar saat ini:</p>
+                            <img src="{{ asset('storage/' . $article->image) }}" alt="Artikel Gambar" class="img-thumbnail"
+                                width="200">
+                        </div>
+                    @endif
                 </div>
 
                 <div class="form-group mb-3">

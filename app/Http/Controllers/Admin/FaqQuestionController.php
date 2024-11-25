@@ -10,7 +10,7 @@ class FaqQuestionController extends Controller
 {
     public function index()
     {
-        $faqQuestions = FaqQuestion::all();
+        $faqQuestions = FaqQuestion::paginate(2);
         return view('pages.admin.faqQuestion.index', compact('faqQuestions'));
     }
 
@@ -31,27 +31,36 @@ class FaqQuestionController extends Controller
         return redirect()->route('faq-questions.index')->with('success', 'Pertanyaan FAQ berhasil ditambahkan.');
     }
 
-    public function show(FaqQuestion $faqQuestions)
+    public function show($id)
     {
+        $faqQuestions = FaqQuestion::findOrFail($id);
         return view('pages.admin.faqQuestion.show', compact('faqQuestions'));
     }
 
-    public function edit(FaqQuestion $faqQuestions)
+
+    public function edit($id)
     {
-        return view('pages.admin.faqQuestion.edit', compact('faqQuestions'));
+        $faqQuestion = FaqQuestion::findOrFail($id); // Ambil data berdasarkan ID atau tampilkan 404 jika tidak ditemukan
+        return view('pages.admin.faqQuestion.edit', compact('faqQuestion'));
     }
 
-    public function update(Request $request, FaqQuestion $faqQuestions)
+
+    public function update(Request $request, $id)
     {
         $request->validate([
             'question' => 'required|string|max:255',
             'answer' => 'required|string',
         ]);
 
-        $faqQuestions->update($request->all());
+        $faqQuestion = FaqQuestion::findOrFail($id); // Ambil data berdasarkan ID
+        $faqQuestion->update([
+            'question' => $request->question,
+            'answer' => $request->answer,
+        ]);
 
         return redirect()->route('faq-questions.index')->with('success', 'Pertanyaan FAQ berhasil diperbarui.');
     }
+
 
     public function destroy($id)
     {

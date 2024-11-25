@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ArticlesController extends Controller
 {
@@ -34,15 +35,17 @@ class ArticlesController extends Controller
             'short_text' => 'required',
             'category_id' => 'required|exists:categories,id',
             'tags' => 'nullable|array',
+            'image' => 'nullable|image|max:2048', // Validasi gambar
         ]);
 
-        $article = Article::create([
-            'title' => $request->title,
-            'slug' => Str::slug($request->title),
-            'full_text' => $request->full_text,
-            'short_text' => $request->short_text,
-            'category_id' => $request->category_id,
-        ]);
+        $data = $request->only(['title', 'slug', 'full_text', 'short_text', 'category_id']);
+
+        // Proses unggah gambar
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('uploads/articles', 'public');
+        }
+
+        $article = Article::create($data);
 
         if ($request->tags) {
             $article->tags()->sync($request->tags);
@@ -50,6 +53,7 @@ class ArticlesController extends Controller
 
         return redirect()->route('articles.index')->with('success', 'Artikel berhasil ditambahkan.');
     }
+
 
     public function show($id)
     {
@@ -75,16 +79,23 @@ class ArticlesController extends Controller
             'short_text' => 'required',
             'category_id' => 'required|exists:categories,id',
             'tags' => 'nullable|array',
+            'image' => 'nullable|image|max:2048', // Validasi gambar
         ]);
 
         $article = Article::findOrFail($id);
-        $article->update([
-            'title' => $request->title,
-            'slug' => Str::slug($request->title),
-            'full_text' => $request->full_text,
-            'short_text' => $request->short_text,
-            'category_id' => $request->category_id,
-        ]);
+        $data = $request->only(['title', 'slug', 'full_text', 'short_text', 'category_id']);
+
+        // Proses unggah gambar
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama jika ada
+            if ($article->image) {
+                Storage::disk('public')->delete($article->image);
+            }
+
+            $data['image'] = $request->file('image')->store('uploads/articles', 'public');
+        }
+
+        $article->update($data);
 
         if ($request->tags) {
             $article->tags()->sync($request->tags);
@@ -93,10 +104,18 @@ class ArticlesController extends Controller
         return redirect()->route('articles.index')->with('success', 'Artikel berhasil diperbarui.');
     }
 
+
     public function destroy($id)
     {
-        $articles = Article::findOrFail($id);
-        $articles->delete();
+        $article = Article::findOrFail($id);
+
+        // Hapus gambar jika ada
+        if ($article->image) {
+            Storage::disk('public')->delete($article->image);
+        }
+
+        $article->delete();
+
         return redirect()->route('articles.index')->with('success', 'Artikel berhasil dihapus.');
     }
 }

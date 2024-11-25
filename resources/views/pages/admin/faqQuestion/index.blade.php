@@ -49,7 +49,9 @@
                     </tbody>
                 </table>
             </div>
-
+            <div class="d-flex justify-content-end mt-3">
+                {{ $faqQuestions->links() }}
+            </div>
         </div>
     </div>
 
