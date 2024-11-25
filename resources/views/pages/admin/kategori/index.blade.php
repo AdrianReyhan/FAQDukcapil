@@ -11,6 +11,10 @@
                 <a href="{{ route('categories.create') }}" class="btn btn-primary mb-2">Tambah Kategori</a>
             </div>
 
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+
             <div class="table-container">
                 <table class="table table-bordered table-hover text-center align-middle">
                     <thead class="table-dark">

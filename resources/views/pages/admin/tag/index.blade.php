@@ -13,6 +13,10 @@
                 <a href="{{ route('tags.create') }}" class="btn btn-primary">Tambah Tag</a>
             </div>
 
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+
             <!-- Tabel Tag -->
             <div class="table-container">
                 <table class="table table-bordered table-hover text-center align-middle">
@@ -32,10 +36,8 @@
                                 <td>{{ $tag->slug }}</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
-                                        <a href="{{ route('tags.edit', $tag->id) }}"
-                                            class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="{{ route('tags.show', $tag->id) }}"
-                                            class="btn btn-info btn-sm">Lihat</a>
+                                        <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ route('tags.show', $tag->id) }}" class="btn btn-info btn-sm">Lihat</a>
                                         <form action="{{ route('tags.destroy', $tag->id) }}" method="POST"
                                             class="delete-form">
                                             @csrf

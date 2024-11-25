@@ -13,6 +13,11 @@
                 <a href="{{ route('articles.create') }}" class="btn btn-primary">Tambah Artikel</a>
             </div>
 
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+
+
             <!-- Tabel Artikel -->
             <div class="table-container">
                 <table class="table table-bordered table-hover text-center align-middle">
