@@ -6,16 +6,23 @@
             <h4>{{ __('Detail Pertanyaan FAQ') }}</h4>
         </div>
         <div class="card-body">
-            <!-- Tampilkan Pertanyaan -->
+            <!-- Tampilkan kategori -->
+            <div class="form-group mb-3">
+                <label for="category"><strong>Kategori:</strong></label>
+                <p id="category">
+                    {{ $faqQuestion->category ? $faqQuestion->category->category : 'Tidak ada kategori' }}
+                </p>
+            </div>
+
             <div class="form-group mb-3">
                 <label for="question"><strong>Pertanyaan:</strong></label>
-                <p id="question">{{ $faqQuestions->question }}</p>
+                <p id="question">{{ $faqQuestion->question }}</p>
             </div>
 
             <!-- Tampilkan Jawaban -->
             <div class="form-group mb-3">
                 <label for="answer"><strong>Jawaban:</strong></label>
-                <p id="answer">{{ $faqQuestions->answer }}</p>
+                <p id="answer">{{ $faqQuestion->answer }}</p>
             </div>
 
             <!-- Tombol Kembali -->

@@ -10,7 +10,7 @@ class FaqCategoryController extends Controller
 {
     public function index()
     {
-        $faqCategories = FaqCategory::paginate(2);
+        $faqCategories = FaqCategory::paginate(10);
         return view('pages.admin.faqKategori.index', compact('faqCategories'));
     }
 

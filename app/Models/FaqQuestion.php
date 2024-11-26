@@ -21,6 +21,7 @@ class FaqQuestion extends Model
     protected $fillable = [
         'answer',
         'question',
+        'faq_category_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -29,6 +30,6 @@ class FaqQuestion extends Model
 
     public function category()
     {
-        return $this->belongsTo(FaqCategory::class, 'category_id');
+        return $this->belongsTo(FaqCategory::class, 'faq_category_id');
     }
 }

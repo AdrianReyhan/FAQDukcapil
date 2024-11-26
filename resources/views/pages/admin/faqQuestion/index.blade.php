@@ -18,15 +18,19 @@
                     <thead class="table-dark">
                         <tr>
                             <th>No</th>
+                            <th>Kategori</th> <!-- Tambahkan kolom kategori -->
                             <th>Pertanyaan</th>
                             <th>Jawaban</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($faqQuestions as $faqQuestion)
+                        @forelse ($faqQuestions as $faqQuestion)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+                                <td>
+                                    {{ $faqQuestion->category ? $faqQuestion->category->category : 'Tidak ada' }}
+                                </td>
                                 <td>{{ $faqQuestion->question }}</td>
                                 <td>{{ Str::limit($faqQuestion->answer, 50) }}</td>
                                 <td>
@@ -45,7 +49,11 @@
                                     </div>
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="5">Belum ada data FAQ.</td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
