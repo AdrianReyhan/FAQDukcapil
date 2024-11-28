@@ -5,12 +5,17 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FaqCategoryController;
 use App\Http\Controllers\Admin\FaqQuestionController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('welcome');
+
+Route::get('/', [LandingPageController::class, 'index'])->name('welcome');
+Route::get('/faq/{id}/detail', [LandingPageController::class, 'faqDetail'])->name('faq.detail');
+
 
 Auth::routes();
 

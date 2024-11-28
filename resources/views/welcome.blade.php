@@ -339,49 +339,23 @@
                 <h2 data-aos="fade-up">Article Categories</h2>
                 <hr data-aos="fade-up">
                 <div class="row">
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                        <h4><i class="bi bi-folder"></i> General (10)</h4>
-                        <ul class="faq-list">
-                            <li><i class="bi bi-file-text"></i> How to change account password?</li>
-                            <li><i class="bi bi-file-text"></i> How to edit order details?</li>
-                            <li><i class="bi bi-file-text"></i> Add new user</li>
-                            <li><i class="bi bi-file-text"></i> Change customer details</li>
-                            <li><i class="bi bi-file-text"></i> Lookup existing customer in order form</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                        <h4><i class="bi bi-folder"></i> Account Settings (6)</h4>
-                        <ul class="faq-list">
-                            <li><i class="bi bi-file-text"></i> How to change account password?</li>
-                            <li><i class="bi bi-file-text"></i> How to edit order details?</li>
-                            <li><i class="bi bi-file-text"></i> Add new user</li>
-                            <li><i class="bi bi-file-text"></i> Change customer details</li>
-                            <li><i class="bi bi-file-text"></i> Lookup existing customer in order form</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <h4><i class="bi bi-folder"></i> Security & Billing (5)</h4>
-                        <ul class="faq-list">
-                            <li><i class="bi bi-file-text"></i> How to change account password?</li>
-                            <li><i class="bi bi-file-text"></i> How to edit order details?</li>
-                            <li><i class="bi bi-file-text"></i> Add new user</li>
-                            <li><i class="bi bi-file-text"></i> Change customer details</li>
-                            <li><i class="bi bi-file-text"></i> Lookup existing customer in order form</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                        <h4><i class="bi bi-folder"></i> Using gomac (45)</h4>
-                        <ul class="faq-list">
-                            <li><i class="bi bi-file-text"></i> How to change account password?</li>
-                            <li><i class="bi bi-file-text"></i> How to edit order details?</li>
-                            <li><i class="bi bi-file-text"></i> Add new user</li>
-                            <li><i class="bi bi-file-text"></i> Change customer details</li>
-                            <li><i class="bi bi-file-text"></i> Lookup existing customer in order form</li>
-                        </ul>
-                    </div>
+                    <!-- Looping untuk setiap kategori -->
+                    @foreach ($faqCategories as $category)
+                        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                            <h4><i class="bi bi-folder"></i> {{ $category->name }}
+                                {{ $category->category }}</h4>
+                            <ul class="faq-list">
+                                <!-- Looping untuk setiap pertanyaan dalam kategori -->
+                                @foreach ($category->faqQuestions as $question)
+                                    <li>
+                                        <a href="{{ route('faq.detail', $question->id) }}">
+                                            <i class="bi bi-file-text"></i> {{ $question->question }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>

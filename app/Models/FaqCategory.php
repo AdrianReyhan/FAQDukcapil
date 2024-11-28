@@ -27,6 +27,6 @@ class FaqCategory extends Model
 
     public function faqQuestions()
     {
-        return $this->hasMany(FaqQuestion::class, 'category_id', 'id');
+        return $this->hasMany(FaqQuestion::class, 'faq_category_id', 'id');
     }
 }
