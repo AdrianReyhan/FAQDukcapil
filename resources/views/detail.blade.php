@@ -19,43 +19,46 @@
                 <div class="col-lg-8" data-aos="fade-up">
                     <div class="faq-description">
                         <!-- Menampilkan pertanyaan -->
-                        <h2>{{ $faqQuestion->question }}</h2>
-
-                        <!-- Menampilkan jawaban -->
-                        <div class="faq-answer">
-                            <p>{!! nl2br(e($faqQuestion->answer)) !!}</p>
-                        </div>
+                        @foreach ($faqCategories as $category)
+                            <h2>
+                                Kategori: {{ $category->category }}
+                            </h2>
+                        @endforeach
 
                         <!-- Testimonial (Optional) -->
                         <div class="testimonial-item">
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                <span>Testimonial related to this question or answer...</span>
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                            <div>
-                                <h3>John Doe</h3>
-                                <h4>Customer</h4>
+                            <div class="row justify-content-between gy-4 mt-4">
+                                <div class="col-lg-8" data-aos="fade-up">
+                                    <div class="portfolio-description">
+                                        <h2>{{ $faqQuestion->question }}</h2>
+                                        <p>
+                                            {!! nl2br(e($faqQuestion->answer)) !!}
+                                        </p>
+                                    </div>
+                                </div>
+
+        
                             </div>
                         </div>
-
-                        <!-- Additional content or description -->
-                        <p>Additional details or content related to the FAQ...</p>
                     </div>
-                </div>
 
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="faq-info">
-                        <h3>FAQ Information</h3>
-                        <ul>
-                            <li><strong>Category</strong> {{ $faqQuestion->category->name }}</li>
-                            <li><strong>Created At</strong> {{ $faqQuestion->created_at->format('d M, Y') }}</li>
-                            <li><a href="{{ route('welcome') }}" class="btn-visit">Back to FAQs</a></li>
-                        </ul>
-                    </div>
+                    <!-- Additional content or description -->
+                    <p>Additional details or content related to the FAQ...</p>
                 </div>
-
             </div>
+
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-info">
+                    <h3>FAQ Information</h3>
+                    <ul>
+                        <li><strong>Category</strong> {{ $faqQuestion->category->name }}</li>
+                        <li><strong>Created At</strong> {{ $faqQuestion->created_at->format('d M, Y') }}</li>
+                        <li><a href="{{ route('welcome') }}" class="btn-visit">Back to FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
 
         </div>
     </section>

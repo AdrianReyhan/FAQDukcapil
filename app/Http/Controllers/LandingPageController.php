@@ -25,8 +25,12 @@ class LandingPageController extends Controller
     {
         // Ambil FAQ berdasarkan ID
         $faqQuestion = FaqQuestion::findOrFail($id);
+        $faqCategories = FaqCategory::whereHas('faqQuestions', function ($query) use ($faqQuestion) {
+            // Menyaring kategori berdasarkan kategori_id yang sesuai dengan faqQuestion
+            $query->where('faq_category_id', $faqQuestion->faq_category_id);
+        })->with('faqQuestions')->get();
 
         // Kirim data ke tampilan faq-detail
-        return view('detail', compact('faqQuestion'));
+        return view('detail', compact('faqCategories', 'faqQuestion'));
     }
 }
