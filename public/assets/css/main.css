@@ -2036,6 +2036,171 @@ section,
     background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+/* General Styling for FAQ Detail Section */
+.faq-details {
+    padding: 60px 0;
+    background-color: var(--background-color);
+}
+
+.faq-details .faq-description {
+    background: var(--section-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-details .faq-description h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.faq-details .faq-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.faq-details .faq-description .quote-icon-left,
+.faq-details .faq-description .quote-icon-right {
+    color: var(--accent-color);
+    font-size: 24px;
+    line-height: 0;
+}
+
+.faq-details .faq-description .quote-icon-left {
+    position: relative;
+    left: -5px;
+}
+
+.faq-details .faq-description .quote-icon-right {
+    position: relative;
+    top: 10px;
+    transform: scaleX(-1);
+}
+
+/* Testimonial Section */
+.faq-details .testimonial-item {
+    background: color-mix(in srgb, var(--default-color), transparent 95%);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-details .testimonial-item .testimonial-img {
+    width: 80px;
+    border-radius: 50%;
+    border: 6px solid var(--background-color);
+    margin-right: 15px;
+    float: left;
+}
+
+.faq-details .testimonial-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.faq-details .testimonial-item h4 {
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin-top: 5px;
+}
+
+/* Info Section */
+.faq-details .faq-info {
+    background: var(--section-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-details .faq-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.faq-details .faq-info h3:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    bottom: 0;
+}
+
+.faq-details .faq-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+}
+
+.faq-details .faq-info ul li {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+}
+
+.faq-details .faq-info ul strong {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 14px;
+}
+
+/* Button Styling */
+.faq-details .faq-info .btn-visit {
+    padding: 8px 40px;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.faq-details .faq-info .btn-visit:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .faq-details .row {
+        flex-direction: column;
+    }
+
+    .faq-details .col-lg-8,
+    .faq-details .col-lg-3 {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 575px) {
+    .faq-details .faq-description h2 {
+        font-size: 24px;
+    }
+
+    .faq-details .faq-info h3 {
+        font-size: 20px;
+    }
+
+    .faq-details .testimonial-item {
+        padding: 20px;
+    }
+
+    .faq-details .faq-info ul {
+        font-size: 14px;
+    }
+}
+
+
 /*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/

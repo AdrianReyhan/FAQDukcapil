@@ -13,9 +13,13 @@ class LandingPageController extends Controller
         // Ambil semua kategori dan pertanyaan FAQ terkait
         $faqCategories = FaqCategory::with('faqQuestions')->get();
 
+        // Ambil satu pertanyaan FAQ tertentu, misalnya yang pertama
+        $faqQuestion = FaqQuestion::first(); // Anda bisa memilih sesuai kebutuhan
+
         // Return tampilan dengan data kategori dan pertanyaan FAQ
-        return view('welcome', compact('faqCategories'));
+        return view('welcome', compact('faqCategories', 'faqQuestion'));
     }
+
 
     public function faqDetail($id)
     {

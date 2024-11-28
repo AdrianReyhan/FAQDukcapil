@@ -1,7 +1,7 @@
 <!-- Favicons -->
-<link href="assets/img/smg.png" rel="icon">
-<link href="assets/img/smg.png" rel="smg-touch-icon">
-<link rel="icon" href="assets/img/smg.png'">
+<link href="{{ asset('assets/img/smg.png') }}" rel="icon">
+<link href="{{ asset('assets/img/smg.png') }}" rel="smg-touch-icon">
+<link rel="icon" href="{{ asset('assets/img/smg.png') }}">
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -11,12 +11,11 @@
     rel="stylesheet">
 
 <!-- Vendor CSS Files -->
-
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="assets/vendor/aos/aos.css" rel="stylesheet">
-<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
 <!-- Main CSS File -->
-<link href="assets/css/main.css" rel="stylesheet">
+<link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">

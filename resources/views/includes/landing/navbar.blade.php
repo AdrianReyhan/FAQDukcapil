@@ -12,7 +12,7 @@
                 <li><a class="nav-link scrollto active" href="#hero" class="active">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#stats">Services</a></li>
-                <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
                 <li><a class="nav-link scrollto" href="#faq">Categories</a></li>
                 <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
