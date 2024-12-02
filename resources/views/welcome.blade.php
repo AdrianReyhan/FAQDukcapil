@@ -336,7 +336,7 @@
         <!-- Faq Section -->
         <section id="faq" class="faq section">
             <div class="container">
-                <h2 data-aos="fade-up">Article Categories</h2>
+                <h2 data-aos="fade-up">FAQ Kategori</h2>
                 <hr data-aos="fade-up">
                 <div class="row">
                     <!-- Looping untuk setiap kategori -->

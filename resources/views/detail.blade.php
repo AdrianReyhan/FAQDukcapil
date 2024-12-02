@@ -37,13 +37,13 @@
                                     </div>
                                 </div>
 
-        
+
                             </div>
                         </div>
                     </div>
 
                     <!-- Additional content or description -->
-                    <p>Additional details or content related to the FAQ...</p>
+                    <br>
                 </div>
             </div>
 
@@ -51,10 +51,12 @@
                 <div class="faq-info">
                     <h3>FAQ Information</h3>
                     <ul>
-                        <li><strong>Category</strong> {{ $faqQuestion->category->name }}</li>
+                        @foreach ($faqCategories as $category)
+                            <li><strong> {{ $category->category }} </strong></li>
+                        @endforeach
                         <li><strong>Created At</strong> {{ $faqQuestion->created_at->format('d M, Y') }}</li>
-                        <li><a href="{{ route('welcome') }}" class="btn-visit">Back to FAQs</a></li>
                     </ul>
+                    <a href="{{ route('welcome') }}" class="btn-visit">Back to FAQs</a>
                 </div>
             </div>
 
@@ -63,6 +65,26 @@
         </div>
     </section>
 
+    {{-- <footer id="footer" class="footer position-relative light-background">
+
+        <div class="container copyright text-center mt-4">
+            <div>
+                © <span class="current-year"></span> | By <a href="https://dispendukcapil.semarangkota.go.id/">
+                    Dinas Kependudukan Dan Pencatatan Sipil Kota Semarang</a>
+
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        // Mendapatkan tahun saat ini
+        const currentYear = new Date().getFullYear();
+
+        // Menampilkan tahun di elemen dengan kelas 'current-year'
+        document.querySelector('.current-year').textContent = currentYear;
+    </script> --}}
 
 </body>
 
