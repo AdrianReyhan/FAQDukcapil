@@ -22,22 +22,33 @@ class LandingPageController extends Controller
 
     public function search(Request $request)
     {
-        // Ambil kata kunci pencarian dari input user
         $searchQuery = $request->input('query');
 
-        // Jika ada pencarian
         if ($searchQuery) {
-            // Pencarian hanya di pertanyaan FAQ
-            $faqQuestions = FaqQuestion::where('question', 'like', '%' . $searchQuery . '%')->get();
+            $faqQuestions = FaqQuestion::with('category')
+                ->where('question', 'like', '%' . $searchQuery . '%')
+                ->get();
 
-            return view('welcome', compact('faqQuestions', 'searchQuery'));
+            $faqCategories = FaqCategory::with(['faqQuestions' => function ($query) use ($searchQuery) {
+                $query->where('question', 'like', '%' . $searchQuery . '%');
+            }])
+                ->where('category', 'like', '%' . $searchQuery . '%')
+                ->get();
         } else {
-            // Jika tidak ada pencarian, ambil semua kategori dan pertanyaan
             $faqCategories = FaqCategory::with('faqQuestions')->get();
-
-            return view('welcome', compact('faqCategories', 'searchQuery'));
+            $faqQuestions = FaqQuestion::with('category')->get();
         }
+
+        // Mengembalikan tampilan dan data pencarian, sertakan query dalam parameter URL
+        return view('welcome', [
+            'faqCategories' => $faqCategories,
+            'faqQuestions' => $faqQuestions,
+            'searchQuery' => $searchQuery
+        ]);
     }
+
+
+
 
 
 

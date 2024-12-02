@@ -202,8 +202,7 @@
                         <div class="service-item d-flex">
                             <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
                             <div>
-                                <h4 class="title"><a href="services-details.html" class="stretched-link">Lorem
-                                        Ipsum</a></h4>
+                                <h4 class="title"><a class="stretched-link">Pencarian FAQ yang Mudah</a></h4>
                                 <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas
                                     molestias excepturi sint occaecati cupiditate non provident</p>
                             </div>
@@ -338,10 +337,13 @@
             <div class="container">
                 <h2 data-aos="fade-up">FAQ Kategori</h2>
                 <hr data-aos="fade-up">
-                <form data-aos="fade-up" action="{{ route('search') }}" method="GET" class="faq-search">
-                    <input type="text" name="query" placeholder="Search FAQs..." class="search-input">
+                <form action="{{ route('search') }}" method="GET" class="faq-search">
+                    <input type="text" name="query" placeholder="Search FAQs..." class="search-input"
+                        value="{{ request()->query('query') }}">
                     <button type="submit" class="search-btn">Search</button>
                 </form>
+
+
                 <div class="row">
                     @if (isset($faqQuestions))
                         <!-- Loop untuk menampilkan hasil pencarian berdasarkan pertanyaan -->
@@ -523,7 +525,7 @@
 
     @include('includes.landing.javascript')
 
-    
+
 
 </body>
 

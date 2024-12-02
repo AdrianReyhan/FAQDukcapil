@@ -11,6 +11,24 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            // Cek apakah ada query di URL setelah pencarian
+            if (window.location.search.indexOf('query') !== -1) {
+                // Tunggu 500ms untuk memastikan konten halaman sudah ter-render
+                setTimeout(function() {
+                    // Pastikan elemen dengan ID 'faq' ada di halaman
+                    if ($('#faq').length) {
+                        console.log('Melakukan scroll ke FAQ');
+                        $('html, body').animate({
+                            scrollTop: $('#faq').offset().top -
+                                80 // Sesuaikan dengan tinggi navbar jika perlu
+                        }, 800); // 800ms untuk scroll halus
+                    }
+                }, 500); // Tunggu 500ms untuk memastikan halaman sepenuhnya dimuat
+            }
+        });
+    </script>
 
     {{-- <!-- Vendor JS Files -->
     <script src="{{ asset('faq/' . $faqQuestion->id . '/detail/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
