@@ -338,24 +338,43 @@
             <div class="container">
                 <h2 data-aos="fade-up">FAQ Kategori</h2>
                 <hr data-aos="fade-up">
+                <form data-aos="fade-up" action="{{ route('search') }}" method="GET" class="faq-search">
+                    <input type="text" name="query" placeholder="Search FAQs..." class="search-input">
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
                 <div class="row">
-                    <!-- Looping untuk setiap kategori -->
-                    @foreach ($faqCategories as $category)
-                        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                            <h4><i class="bi bi-folder"></i> {{ $category->name }}
-                                {{ $category->category }}</h4>
-                            <ul class="faq-list">
-                                <!-- Looping untuk setiap pertanyaan dalam kategori -->
-                                @foreach ($category->faqQuestions as $question)
+                    @if (isset($faqQuestions))
+                        <!-- Loop untuk menampilkan hasil pencarian berdasarkan pertanyaan -->
+                        @foreach ($faqQuestions as $question)
+                            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                                <h4><i class="bi bi-file-text"></i> {{ $question->question }}</h4>
+                                <ul class="faq-list">
                                     <li>
                                         <a href="{{ route('faq.detail', $question->id) }}">
                                             <i class="bi bi-file-text"></i> {{ $question->question }}
                                         </a>
                                     </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endforeach
+                                </ul>
+                            </div>
+                        @endforeach
+                    @else
+                        <!-- Loop untuk menampilkan semua kategori dan pertanyaan jika tidak ada pencarian -->
+                        @foreach ($faqCategories as $category)
+                            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                                <h4><i class="bi bi-folder"></i> {{ $category->name }} {{ $category->category }}</h4>
+                                <ul class="faq-list">
+                                    <!-- Menampilkan semua pertanyaan dalam kategori -->
+                                    @foreach ($category->faqQuestions as $question)
+                                        <li>
+                                            <a href="{{ route('faq.detail', $question->id) }}">
+                                                <i class="bi bi-file-text"></i> {{ $question->question }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </section>
@@ -503,6 +522,8 @@
 
 
     @include('includes.landing.javascript')
+
+    
 
 </body>
 

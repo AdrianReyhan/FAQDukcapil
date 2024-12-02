@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('welcome');
 Route::get('/faq/{id}/detail', [LandingPageController::class, 'faqDetail'])->name('faq.detail');
+Route::get('/search', [LandingPageController::class, 'search'])->name('search');
+
 
 
 Auth::routes();

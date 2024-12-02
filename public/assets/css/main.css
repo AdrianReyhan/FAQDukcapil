@@ -1515,18 +1515,12 @@ section,
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
-.faq .content h3 {
-    font-weight: 400;
-    font-size: 34px;
-}
-.faq.section {
-    padding: 50px 0;
-}
-.faq h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+/* Styling untuk form pencarian */
+.faq-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0; /* Memberikan jarak pada bagian atas dan bawah */
 }
 
 .faq hr {
@@ -1535,19 +1529,39 @@ section,
     margin: 10px 0 20px;
 }
 
-.faq h4 {
-    font-weight: bold;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.faq h4 i {
-    font-size: 1.2rem;
-    color: #2c3e50;
+.faq-search .search-input {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #2c3e50; /* Border hitam */
+    width: 50%; /* Menyesuaikan ukuran input */
     margin-right: 10px;
+    color: #2c3e50; /* Teks input berwarna hitam */
+    transition: border-color 0.3s ease, color 0.3s ease; /* Menambahkan transisi untuk hover */
 }
 
+/* .faq-search .search-input:hover {
+    border-color: #e74c3c; 
+    color: #e74c3c; 
+} */
+
+.faq-search .search-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #e74c3c;
+    color: white;
+    border: 1px solid #f26f61;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transisi saat hover */
+}
+
+.faq-search .search-btn:hover {
+    background-color: #f26f61; /* Tombol berwarna merah saat hover */
+    color: #ecf0f1; /* Warna teks putih saat tombol merah */
+}
+
+/* Styling untuk kategori FAQ */
 .faq-list {
     list-style: none;
     padding: 0;
@@ -1562,18 +1576,19 @@ section,
 
 .faq-list li i {
     margin-right: 10px;
-    color: #3498db;
+    color: #2c3e50; /* Ikon berwarna hitam */
+    transition: color 0.3s ease; /* Menambahkan transisi saat hover */
+}
+
+.faq-list li:hover i {
+    color: #e74c3c; /* Ikon berubah menjadi merah saat hover */
 }
 
 .faq .bi-file-text {
     font-size: 1rem;
 }
 
-.faq .content p {
-    font-size: 15px;
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
+/* Styling untuk container FAQ item */
 .faq .faq-container .faq-item {
     background-color: var(--surface-color);
     position: relative;
@@ -1587,6 +1602,7 @@ section,
     margin-bottom: 0;
 }
 
+/* Judul FAQ item */
 .faq .faq-container .faq-item h3 {
     font-weight: 600;
     font-size: 18px;
@@ -1596,17 +1612,19 @@ section,
     cursor: pointer;
     display: flex;
     align-items: flex-start;
+    color: #2c3e50; /* Judul berwarna hitam */
 }
 
 .faq .faq-container .faq-item h3 .num {
-    color: var(--accent-color);
+    color: #2c3e50; /* Nomor berwarna hitam */
     padding-right: 5px;
 }
 
 .faq .faq-container .faq-item h3:hover {
-    color: var(--accent-color);
+    color: #e74c3c; /* Judul berubah menjadi merah saat hover */
 }
 
+/* Konten FAQ item */
 .faq .faq-container .faq-item .faq-content {
     display: grid;
     grid-template-rows: 0fr;
@@ -1620,6 +1638,7 @@ section,
     overflow: hidden;
 }
 
+/* Toggle untuk FAQ item */
 .faq .faq-container .faq-item .faq-toggle {
     position: absolute;
     top: 20px;
@@ -1628,14 +1647,16 @@ section,
     line-height: 0;
     transition: 0.3s;
     cursor: pointer;
+    color: #2c3e50; /* Toggle berwarna hitam */
 }
 
 .faq .faq-container .faq-item .faq-toggle:hover {
-    color: var(--accent-color);
+    color: #e74c3c; /* Toggle berubah menjadi merah saat hover */
 }
 
+/* Aktifkan konten FAQ yang ditoggle */
 .faq .faq-container .faq-active h3 {
-    color: var(--accent-color);
+    color: #e74c3c; /* Judul berubah menjadi merah saat aktif */
 }
 
 .faq .faq-container .faq-active .faq-content {
@@ -1645,9 +1666,10 @@ section,
     padding-top: 10px;
 }
 
+/* Rotate toggle saat aktif */
 .faq .faq-container .faq-active .faq-toggle {
     transform: rotate(90deg);
-    color: var(--accent-color);
+    color: #e74c3c; /* Toggle aktif berwarna merah */
 }
 
 /*--------------------------------------------------------------

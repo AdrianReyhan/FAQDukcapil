@@ -20,6 +20,26 @@ class LandingPageController extends Controller
         return view('welcome', compact('faqCategories', 'faqQuestion'));
     }
 
+    public function search(Request $request)
+    {
+        // Ambil kata kunci pencarian dari input user
+        $searchQuery = $request->input('query');
+
+        // Jika ada pencarian
+        if ($searchQuery) {
+            // Pencarian hanya di pertanyaan FAQ
+            $faqQuestions = FaqQuestion::where('question', 'like', '%' . $searchQuery . '%')->get();
+
+            return view('welcome', compact('faqQuestions', 'searchQuery'));
+        } else {
+            // Jika tidak ada pencarian, ambil semua kategori dan pertanyaan
+            $faqCategories = FaqCategory::with('faqQuestions')->get();
+
+            return view('welcome', compact('faqCategories', 'searchQuery'));
+        }
+    }
+
+
 
     public function faqDetail($id)
     {
