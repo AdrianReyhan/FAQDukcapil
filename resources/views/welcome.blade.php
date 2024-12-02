@@ -83,12 +83,14 @@
                 <div class="row align-items-xl-center gy-5">
 
                     <div class="col-xl-5 content">
-                        <h3>About Us</h3>
-                        <h2>Ducimus rerum libero reprehenderit cumque</h2>
-                        <p>Ipsa sint sit. Quis ducimus tempore dolores impedit et dolor cumque alias maxime. Enim
-                            reiciendis minus et rerum hic non. Dicta quas cum quia maiores iure. Quidem nulla qui
-                            assumenda incidunt voluptatem tempora deleniti soluta.</p>
-                        <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                        <h3>Tentang Kami</h3>
+                        <h2>FAQ Kami Selalu Diperbarui dengan Informasi Terbaru</h2>
+                        <p>Kami berkomitmen untuk memastikan bahwa halaman FAQ kami selalu mencerminkan informasi yang
+                            paling up-to-date. Setiap kali ada perubahan atau pembaruan pada produk, layanan, atau
+                            kebijakan kami, halaman FAQ akan langsung diperbarui untuk memberikan jawaban yang akurat
+                            dan relevan bagi Anda</p>
+                        <a href="#faq" class="read-more"><span>Klik Disini</span><i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
 
                     <div class="col-xl-7">
@@ -96,37 +98,35 @@
 
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                                 <div class="icon-box">
-                                    <i class="bi bi-buildings"></i>
-                                    <h3>Eius provident</h3>
-                                    <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor
-                                        voluptatem</p>
+                                    <i class="bi bi-person-lines-fill"></i>
+                                    <h3>Proses Pendaftaran Kartu Keluarga</h3>
+                                    <p>Pelajari langkah-langkah mudah untuk mendaftar atau memperbarui Kartu Keluarga
+                                        Anda.</p>
                                 </div>
                             </div> <!-- End Icon Box -->
 
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                                 <div class="icon-box">
-                                    <i class="bi bi-clipboard-pulse"></i>
-                                    <h3>Rerum aperiam</h3>
-                                    <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates
-                                        quia</p>
+                                    <i class="bi bi-card-text"></i>
+                                    <h3>Persyaratan Pembuatan KTP Elektronik</h3>
+                                    <p>Cek persyaratan dan prosedur pembuatan KTP Elektronik secara lengkap.</p>
                                 </div>
                             </div> <!-- End Icon Box -->
 
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                                 <div class="icon-box">
-                                    <i class="bi bi-command"></i>
-                                    <h3>Veniam omnis</h3>
-                                    <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur
-                                        corrupti</p>
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    <h3>Pengurusan Akta Kelahiran dan Kematian</h3>
+                                    <p>Informasi lengkap tentang pengurusan Akta Kelahiran dan Kematian.</p>
                                 </div>
                             </div> <!-- End Icon Box -->
 
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                                 <div class="icon-box">
-                                    <i class="bi bi-graph-up-arrow"></i>
-                                    <h3>Delares sapiente</h3>
-                                    <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis
-                                        quideme lorenda</p>
+                                    <i class="bi bi-flag"></i>
+                                    <h3>Layanan dan Dokumen untuk Warga Negara Asing</h3>
+                                    <p>Khusus untuk warga negara asing yang membutuhkan layanan kependudukan di
+                                        Indonesia.</p>
                                 </div>
                             </div> <!-- End Icon Box -->
 
@@ -191,7 +191,9 @@
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Services</h2>
-                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+                <p>Dengan menggunakan fitur pencarian yang mudah, Anda dapat dengan cepat menemukan informasi yang
+                    relevan. Jika Anda tidak menemukan jawaban yang Anda cari, jangan ragu untuk menghubungi tim kami!
+                </p>
             </div><!-- End Section Title -->
 
             <div class="container">
@@ -200,11 +202,13 @@
 
                     <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+                            <div class="icon flex-shrink-0"><i class="bi bi-search"></i></div>
                             <div>
                                 <h4 class="title"><a class="stretched-link">Pencarian FAQ yang Mudah</a></h4>
-                                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas
-                                    molestias excepturi sint occaecati cupiditate non provident</p>
+                                <p class="description">Kami menyediakan fitur pencarian yang memungkinkan Anda untuk
+                                    menemukan jawaban atas pertanyaan Anda dengan cepat. Cukup masukkan kata kunci
+                                    terkait, dan kami akan menunjukkan hasil yang relevan untuk membantu Anda lebih
+                                    mudah memahami topik yang dicari.</p>
                             </div>
                         </div>
                     </div>
@@ -212,60 +216,62 @@
 
                     <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
                         <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+                            <div class="icon flex-shrink-0"><i class="bi bi-archive"></i></div>
                             <div>
-                                <h4 class="title"><a href="services-details.html" class="stretched-link">Dolor
-                                        Sitema</a></h4>
-                                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat tarad limino ata</p>
+                                <h4 class="title"><a class="stretched-link">Beragam Kategori FAQ</a></h4>
+                                <p class="description">Website FAQ kami mencakup berbagai kategori yang terorganisir
+                                    dengan baik, mulai dari Pembayaran, Pengiriman, Akun Pengguna, hingga Produk dan
+                                    Layanan. Cukup pilih kategori yang sesuai untuk menemukan jawaban atas pertanyaan
+                                    spesifik Anda.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
                         <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+                            <div class="icon flex-shrink-0"><i class="bi bi-person-lines-fill"></i></div>
                             <div>
-                                <h4 class="title"><a href="services-details.html" class="stretched-link">Sed ut
-                                        perspiciatis</a></h4>
-                                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                    cillum dolore eu fugiat nulla pariatur</p>
+                                <h4 class="title"><a class="stretched-link">Berguna untuk Pengguna Baru dan Lama</a>
+                                </h4>
+                                <p class="description">FAQ kami dirancang untuk melayani semua pengguna, baik yang baru
+                                    pertama kali menggunakan layanan kami, maupun pelanggan setia. Kami memastikan
+                                    setiap informasi yang relevan disediakan dengan jelas dan mudah diakses.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
                         <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+                            <div class="icon flex-shrink-0"><i class="bi bi-clock"></i></div>
                             <div>
-                                <h4 class="title"><a href="services-details.html" class="stretched-link">Magni
-                                        Dolores</a></h4>
-                                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                    qui officia deserunt mollit anim id est laborum</p>
+                                <h4 class="title"><a class="stretched-link">Diperbarui Secara Berkala</a></h4>
+                                <p class="description">FAQ kami selalu diperbarui dengan informasi terbaru. Setiap kali
+                                    ada perubahan pada produk atau layanan, kami pastikan halaman FAQ langsung
+                                    mencerminkan informasi terbaru yang berguna bagi Anda.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="500">
                         <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
+                            <div class="icon flex-shrink-0"><i class="bi bi-check-circle"></i></div>
                             <div>
-                                <h4 class="title"><a href="services-details.html" class="stretched-link">Nemo
-                                        Enim</a></h4>
-                                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                    blanditiis praesentium voluptatum deleniti atque</p>
+                                <h4 class="title"><a class="stretched-link">Tanya Jawab yang Dapat Dipercaya</a></h4>
+                                <p class="description">Semua informasi yang ada di FAQ kami sudah diverifikasi dan
+                                    disusun oleh tim ahli kami. Anda dapat yakin bahwa setiap jawaban yang diberikan
+                                    adalah akurat dan terpercaya.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
 
                     <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="600">
                         <div class="service-item d-flex">
-                            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
+                            <div class="icon flex-shrink-0"><i class="bi bi-headset"></i></div>
                             <div>
-                                <h4 class="title"><a href="services-details.html" class="stretched-link">Eiusmod
-                                        Tempor</a></h4>
-                                <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam
-                                    libero tempore, cum soluta nobis est eligendi</p>
+                                <h4 class="title"><a class="stretched-link">Bantuan Langsung Jika Dibutuhkan</a></h4>
+                                <p class="description">Jika Anda tidak menemukan jawaban yang Anda cari, kami juga
+                                    menyediakan opsi untuk menghubungi tim support kami. Anda bisa mengajukan pertanyaan
+                                    lebih lanjut melalui form kontak atau email, dan tim kami siap membantu Anda.</p>
                             </div>
                         </div>
                     </div><!-- End Service Item -->
