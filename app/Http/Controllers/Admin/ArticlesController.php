@@ -29,6 +29,7 @@ class ArticlesController extends Controller
 
     public function store(Request $request)
     {
+        // Validasi input
         $request->validate([
             'title' => 'required|string|max:255',
             'full_text' => 'required',
@@ -38,21 +39,43 @@ class ArticlesController extends Controller
             'image' => 'nullable|image|max:2048', // Validasi gambar
         ]);
 
-        $data = $request->only(['title', 'slug', 'full_text', 'short_text', 'category_id']);
+        // Membuat slug otomatis berdasarkan judul artikel
+        $slug = Str::slug($request->title);
 
-        // Proses unggah gambar
+        // Pastikan slug unik
+        if (Article::where('slug', $slug)->exists()) {
+            $slug .= '-' . time(); // Jika slug sudah ada, tambahkan timestamp untuk membuatnya unik
+        }
+
+        // Ambil data dari request dan tambahkan slug
+        $data = $request->only(['title', 'full_text', 'short_text', 'category_id']);
+        $data['slug'] = $slug;  // Menambahkan slug yang telah dibuat
+
+        // Proses unggah gambar (jika ada)
         if ($request->hasFile('image')) {
+            // Cek jika artikel sudah memiliki gambar lama dan hapus gambar tersebut
+            if ($article = Article::find($request->id)) {
+                if ($article->image) {
+                    Storage::disk('public')->delete($article->image);
+                }
+            }
+
+            // Menyimpan gambar baru dan mendapatkan pathnya
             $data['image'] = $request->file('image')->store('uploads/articles', 'public');
         }
 
+        // Menyimpan artikel baru
         $article = Article::create($data);
 
+        // Menambahkan tags jika ada
         if ($request->tags) {
             $article->tags()->sync($request->tags);
         }
 
+        // Redirect ke halaman daftar artikel
         return redirect()->route('articles.index')->with('success', 'Artikel berhasil ditambahkan.');
     }
+
 
 
     public function show($id)

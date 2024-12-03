@@ -6,7 +6,7 @@
             <h4>{{ __('Tambah Artikel') }}</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('articles.store') }}" method="POST">
+            <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <!-- Judul Artikel -->
@@ -52,6 +52,15 @@
                     </select>
                     <small class="form-text text-muted">Gunakan Ctrl (Windows) atau Command (Mac) untuk memilih beberapa
                         tag.</small>
+                </div>
+
+                <!-- Gambar -->
+                <div class="form-group mb-3">
+                    <label for="image">Upload Gambar</label>
+                    <input type="file" id="image" name="image" class="form-control">
+                    @error('image')
+                        <div class="text-danger mt-1">{{ $message }}</div>
+                    @enderror
                 </div>
 
 
