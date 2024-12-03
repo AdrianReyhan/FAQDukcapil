@@ -1,7 +1,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <a href="#hero" class="logo d-flex align-items-center me-auto me-xl-0">
 
             <img src="assets/img/smg.png" alt="logo-smg">
             <h1 class="sitename">FAQ</h1><span>.</span>
@@ -11,10 +11,10 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero" class="active">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#stats">Services</a></li>
+                <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
                 <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
-                <li><a class="nav-link scrollto" href="#faq">Categories</a></li>
-                <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                {{-- <li><a class="nav-link scrollto" href="#faq">Categories</a></li> --}}
+                {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="#">Dropdown 1</a></li>
@@ -32,8 +32,8 @@
                         <li><a href="#">Dropdown 3</a></li>
                         <li><a href="#">Dropdown 4</a></li>
                     </ul>
-                </li>
-                <li><a href="index.html#contact">Contact</a></li>
+                </li> --}}
+                <li><a href="#footer">Kontak</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

@@ -101,10 +101,11 @@
 
         document.querySelector('.current-year').textContent = currentYear;
     </script>
-    <script src="https://cdn.tiny.cloud/1/5ibnn5gcdir3oe9787qyp3x9a792aw257jv39apisf3cpkok/tinymce/7/tinymce.min.js"
-        referrerpolicy="origin"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{-- <script src="https://cdn.tiny.cloud/1/5ibnn5gcdir3oe9787qyp3x9a792aw257jv39apisf3cpkok/tinymce/7/tinymce.min.js"
+        referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: '#full_text',
@@ -143,7 +144,7 @@
                 }
             },
         });
-    </script>
+    </script> --}}
 
 
     <script>

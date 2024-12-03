@@ -31,7 +31,14 @@ class FaqQuestionController extends Controller
             'faq_category_id' => 'nullable|exists:faq_categories,id',
         ]);
 
-        FaqQuestion::create($request->all());
+        $answer = html_entity_decode($request->answer);
+
+
+        FaqQuestion::create([
+            'question' => $request->question,
+            'answer' => $answer,
+            'faq_category_id' => $request->faq_category_id,
+        ]);
 
         return redirect()->route('faq-questions.index')->with('success', 'Pertanyaan FAQ berhasil ditambahkan.');
     }

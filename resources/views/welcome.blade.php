@@ -190,7 +190,7 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Services</h2>
+                <h2>Layanan</h2>
                 <p>Dengan menggunakan fitur pencarian yang mudah, Anda dapat dengan cepat menemukan informasi yang
                     relevan. Jika Anda tidak menemukan jawaban yang Anda cari, jangan ragu untuk menghubungi tim kami!
                 </p>
@@ -283,7 +283,7 @@
         </section><!-- /Services Section -->
 
         <!-- Features Section -->
-        <section id="features" class="features section">
+        {{-- <section id="features" class="features section">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -335,7 +335,8 @@
 
             </div>
 
-        </section><!-- /Features Section -->
+        </section> --}}
+        <!-- /Features Section -->
 
 
         <!-- Faq Section -->
@@ -343,7 +344,7 @@
             <div class="container">
                 <h2 data-aos="fade-up">FAQ Kategori</h2>
                 <hr data-aos="fade-up">
-                <form action="{{ route('search') }}" method="GET" class="faq-search">
+                <form action="{{ route('search') }}" method="GET" class="faq-search" data-aos="fade-up">
                     <input type="text" name="query" placeholder="Search FAQs..." class="search-input"
                         value="{{ request()->query('query') }}">
                     <button type="submit" class="search-btn">Search</button>

@@ -32,7 +32,7 @@
                                     <div class="portfolio-description">
                                         <h2>{{ $faqQuestion->question }}</h2>
                                         <p>
-                                            {!! nl2br(e($faqQuestion->answer)) !!}
+                                            {!! nl2br($faqQuestion->answer) !!}
                                         </p>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                         @foreach ($faqCategories as $category)
                             <li><strong> {{ $category->category }} </strong></li>
                         @endforeach
-                        <li><strong>Created At</strong> {{ $faqQuestion->created_at->format('d M, Y') }}</li>
+                        <li><strong>Dibuat Pada</strong> {{ $faqQuestion->created_at->format('d M Y') }}</li>
                     </ul>
                     <a href="{{ route('welcome') }}" class="btn-visit">Back to FAQs</a>
                 </div>

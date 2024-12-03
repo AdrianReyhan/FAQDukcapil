@@ -18,7 +18,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>No</th>
-                            <th>Kategori</th> <!-- Tambahkan kolom kategori -->
+                            <th>Kategori</th>
                             <th>Pertanyaan</th>
                             <th>Jawaban</th>
                             <th>Aksi</th>
@@ -29,10 +29,13 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>
-                                    {{ $faqQuestion->category ? $faqQuestion->category->category : 'Tidak ada' }}
+                                    <span class="badge bg-success text-white">
+                                        {{ $faqQuestion->category ? $faqQuestion->category->category : 'Tidak ada' }}
+                                    </span>
+
                                 </td>
                                 <td>{{ $faqQuestion->question }}</td>
-                                <td>{{ Str::limit($faqQuestion->answer, 50) }}</td>
+                                <td>{!! Str::limit($faqQuestion->answer, 50) !!}</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
                                         <a href="{{ route('faq-questions.edit', $faqQuestion->id) }}"

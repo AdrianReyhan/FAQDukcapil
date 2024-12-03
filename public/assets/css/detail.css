@@ -645,7 +645,7 @@ h6 {
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 20px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .faq-details .faq-description h3 {
