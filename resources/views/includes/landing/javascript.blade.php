@@ -7,6 +7,7 @@
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
@@ -27,6 +28,16 @@
                     }
                 }, 500); // Tunggu 500ms untuk memastikan halaman sepenuhnya dimuat
             }
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Menambahkan event listener pada klik kategori
+            $('.category-header').on('click', function() {
+                // Toggle visibilitas <ul> terkait
+                $(this).next('.faq-list').slideToggle();
+            });
         });
     </script>
 

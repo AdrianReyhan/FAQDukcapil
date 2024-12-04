@@ -68,17 +68,20 @@
                     <!-- /.col-->
                     <div class="col-12 col-sm-6 col-xl-4 col-xxl-3">
                         <div class="card overflow-hidden">
-                            <div class="card-body p-0 d-flex align-items-center">
-                                <div class="bg-danger text-white p-4 me-3">
-                                    <svg class="icon icon-xl">
-                                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-                                    </svg>
+                            <a href="{{ route('faq-questions.index') }}">
+                                <div class="card-body p-0 d-flex align-items-center">
+                                    <div class="bg-danger text-white p-4 me-3">
+                                        <svg class="icon icon-xl">
+                                            <use xlink:href="{{ asset('icons/coreui.svg#cil-note-add') }}"></use>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="fs-6 fw-semibold text-danger">{{ $faqQuestion }}</div>
+                                        <div class="text-body-secondary text-uppercase fw-semibold small">Pertanyaan FAQ
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="fs-6 fw-semibold text-danger">$1.999,50</div>
-                                    <div class="text-body-secondary text-uppercase fw-semibold small">Widget title</div>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <!-- /.col-->

@@ -1,6 +1,6 @@
 <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('dashboarad') }}">
+        <a class="nav-link" href="{{ route('dashboard') }}">
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-speedometer') }}"></use>
             </svg>
@@ -9,37 +9,54 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('users.index') }}">
+        <a class="nav-link" href="{{ route('categories.index') }}">
             <svg class="nav-icon">
-                <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
+                <use xlink:href="{{ asset('icons/coreui.svg#cil-newspaper') }}"></use>
             </svg>
-            {{ __('Users') }}
+            {{ __('Kategori') }}
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('about') }}">
+        <a class="nav-link" href="{{ route('tags.index') }}">
             <svg class="nav-icon">
-                <use xlink:href="{{ asset('icons/coreui.svg#cil-speedometer') }}"></use>
+                <use xlink:href="{{ asset('icons/coreui.svg#cil-tag') }}"></use>
             </svg>
-            {{ __('About us') }}
+            {{ __('Tag') }}
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('articles.index') }}">
+            <svg class="nav-icon">
+                <use xlink:href="{{ asset('icons/coreui.svg#cil-description') }}"></use>
+            </svg>
+            {{ __('Artikel') }}
         </a>
     </li>
 
     <li class="nav-group" aria-expanded="false">
-        <a class="nav-link nav-group-toggle" href="#">
+        <a class="nav-link nav-group-toggle" >
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-star') }}"></use>
             </svg>
-            Two-level menu
+            FAQ Management
         </a>
         <ul class="nav-group-items" style="height: 0px;">
             <li class="nav-item">
-                <a class="nav-link" href="#" target="_top">
+                <a class="nav-link" href="{{ route('faq-categories.index') }}" target="_top">
                     <svg class="nav-icon">
-                        <use xlink:href="{{ asset('icons/coreui.svg#cil-bug') }}"></use>
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-spreadsheet') }}"></use>
                     </svg>
-                    Child menu
+                    FAQ Kategori
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('faq-questions.index') }}" target="_top">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-note-add') }}"></use>
+                    </svg>
+                    FAQ Question
                 </a>
             </li>
         </ul>

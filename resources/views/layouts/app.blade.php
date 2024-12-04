@@ -21,7 +21,7 @@
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
         <div class="sidebar-brand d-none d-md-flex" style="padding: 10px;">
-            <img src="{{ asset('assets/img/smg.png') }}" alt="CoreUI Logo"
+            <img src="{{ asset('assets/img/smg.png') }}" alt="Smg Logo"
                 style="width: 60px; height: auto; margin: 0 auto; display: block;">
         </div>
 
@@ -39,8 +39,8 @@
                     </svg>
                 </button>
                 <a class="header-brand d-md-none" href="#">
-                    <svg width="118" height="46" alt="CoreUI Logo">
-                        <use xlink:href="{{ asset('icons/brand.svg#full') }}"></use>
+                    <svg width="118" height="46" alt="Smg Logo">
+                        <use xlink:href="{{ asset('assets/img/smg.png') }}"></use>
                     </svg>
                 </a>
                 <ul class="header-nav d-none d-md-flex">

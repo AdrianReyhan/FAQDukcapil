@@ -370,7 +370,15 @@
                         <!-- Loop untuk menampilkan semua kategori dan pertanyaan jika tidak ada pencarian -->
                         @foreach ($faqCategories as $category)
                             <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                                <h4><i class="bi bi-folder"></i> {{ $category->name }} {{ $category->category }}</h4>
+                                <h4 class="category-header" style="cursor: pointer;">
+                                    <i class="bi bi-folder"></i>
+                                    {{ $category->name }} {{ $category->category }}
+                                    <span class="badge bg-danger" style="margin-left: 10px; font-size: 12px;">
+                                        {{ $category->faqQuestions->count() }} Pertanyaan
+                                    </span>
+
+                                </h4>
+
                                 <ul class="faq-list">
                                     <!-- Menampilkan semua pertanyaan dalam kategori -->
                                     @foreach ($category->faqQuestions as $question)
