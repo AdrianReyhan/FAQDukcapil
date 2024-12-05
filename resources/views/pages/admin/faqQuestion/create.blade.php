@@ -60,12 +60,7 @@
             valid_elements: 'p,b,strong,i,em,ul,ol,li,a[href],img[src|alt],h1,h2,h3,h4,h5,h6,br', // Tentukan elemen yang diizinkan
             plugins: [
                 'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists',
-                'searchreplace', 'table', 'visualblocks', 'wordcount', 'checklist', 'mediaembed', 'casechange',
-                'export', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen',
-                'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'mentions', 'tinycomments',
-                'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss',
-                'markdown',
-                'importword', 'exportword', 'exportpdf'
+                'searchreplace', 'table', 'visualblocks', 'wordcount', 
             ],
             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat | image',
             tinycomments_mode: 'embedded',
