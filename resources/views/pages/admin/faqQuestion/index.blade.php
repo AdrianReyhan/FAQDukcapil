@@ -13,7 +13,7 @@
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
 
-            <div class="table-container">
+            <div class="table-container table-responsive">
                 <table class="table table-bordered table-hover text-center align-middle">
                     <thead class="table-dark">
                         <tr>
@@ -35,7 +35,7 @@
 
                                 </td>
                                 <td>{{ $faqQuestion->question }}</td>
-                                <td>{!! Str::limit($faqQuestion->answer, 50) !!}</td>
+                                <td>{!!($faqQuestion->answer) !!}</td>
                                 <td>
                                     <div class="d-flex justify-content-center gap-2">
                                         <a href="{{ route('faq-questions.edit', $faqQuestion->id) }}"

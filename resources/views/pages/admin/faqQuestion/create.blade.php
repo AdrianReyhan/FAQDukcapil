@@ -52,15 +52,16 @@
     </div>
 
     <!-- Inisialisasi TinyMCE -->
-    <script src="https://cdn.tiny.cloud/1/5ibnn5gcdir3oe9787qyp3x9a792aw257jv39apisf3cpkok/tinymce/7/tinymce.min.js"
+    <script src="https://cdn.tiny.cloud/1/8zxn220i3i77z1wzznr4fbbchekku6qp447htqkbkt70bk1j/tinymce/7/tinymce.min.js"
         referrerpolicy="origin"></script>
+
     <script>
         tinymce.init({
             selector: '#answer',
             valid_elements: 'p,b,strong,i,em,ul,ol,li,a[href],img[src|alt],h1,h2,h3,h4,h5,h6,br', // Tentukan elemen yang diizinkan
             plugins: [
                 'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists',
-                'searchreplace', 'table', 'visualblocks', 'wordcount', 
+                'searchreplace', 'table', 'visualblocks', 'wordcount',
             ],
             toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat | image',
             tinycomments_mode: 'embedded',

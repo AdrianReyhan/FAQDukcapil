@@ -20,7 +20,7 @@
 
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-        <div class="sidebar-brand d-none d-md-flex" style="padding: 10px;">
+        <div class="sidebar-brand d-flex align-items-center" style="padding: 10px;">
             <img src="{{ asset('assets/img/smg.png') }}" alt="Smg Logo"
                 style="width: 60px; height: auto; margin: 0 auto; display: block;">
         </div>
